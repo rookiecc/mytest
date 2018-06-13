@@ -27,12 +27,12 @@
 	  <repository>
 	  <id>user-release</id>
 	  <name>user release version</name>
-	  <url>http://10.234.243.50:8081/repository/maven-releases/</url>
+	  <url>http://loacalhost:8081/repository/maven-releases/</url>
 	  </repository>
 	  <snapshotRepository>
 	  <id>user-snapshots</id>
 	  <name>user snapshots version</name>
-	  <url>http://10.234.243.50:8081/repository/maven-snapshots/</url>
+	  <url>http://loacalhost:8081/repository/maven-snapshots/</url>
 	  </snapshotRepository>
 	</distributionManagement>
   
