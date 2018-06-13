@@ -4,7 +4,7 @@
 
   <groupId>rookiecc</groupId>
   <artifactId>test</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>test</name>
@@ -27,12 +27,12 @@
 	  <repository>
 	  <id>user-release</id>
 	  <name>user release version</name>
-	  <url>http://loacalhost:8081/repository/maven-releases/</url>
+	  <url>http://localhost:8081/repository/maven-releases/</url>
 	  </repository>
 	  <snapshotRepository>
 	  <id>user-snapshots</id>
 	  <name>user snapshots version</name>
-	  <url>http://loacalhost:8081/repository/maven-snapshots/</url>
+	  <url>http://localhost:8081/repository/maven-snapshots/</url>
 	  </snapshotRepository>
 	</distributionManagement>
   
