@@ -26,43 +26,43 @@ public class ElasticsearchTest {
 
 	private TransportClient client = null;
 
-	@SuppressWarnings({ "resource", "unchecked" })
-	@Before
-	public void getConnection() throws UnknownHostException {
-		// 创建客户端
-		client = new PreBuiltTransportClient(Settings.EMPTY)
-				.addTransportAddresses(new TransportAddress(InetAddress.getByName(HOST), PORT));
-		logger.info("create connection");
-	}
-
-	@Test
-	public void addIndex1() throws IOException {
-		IndexResponse response = client.prepareIndex("msg", "tweet", "1").setSource(XContentFactory.jsonBuilder()
-				.startObject().field("userName", "张三").field("sendDate", new Date()).field("msg", "你好李四").endObject())
-				.get();
-
-		logger.info("索引名称:" + response.getIndex() + "\n类型:" + response.getType() + "\n文档ID:" + response.getId()
-				+ "\n当前实例状态:" + response.status());
-	}
-
-	@Test
-	public void addIndex2() {
-		String jsonStr = "{" + "\"userName\":\"张三\"," + "\"sendDate\":\"2017-11-30\"," + "\"msg\":\"你好李四\"" + "}";
-		IndexResponse response = client.prepareIndex("weixin", "tweet").setSource(jsonStr, XContentType.JSON).get();
-		logger.info("json索引名称:" + response.getIndex() + "\njson类型:" + response.getType() + "\njson文档ID:"
-				+ response.getId() + "\n当前实例json状态:" + response.status());
-	}
-	
-	
-	@Test
-	public void getData1() {
-		GetResponse getResponse = client.prepareGet("msg", "tweet", "1").get();
-		logger.info("索引库的数据:" + getResponse.getSourceAsString());
-	}
-
-	@After
-	public void closeConnection() {
-		// 关闭客户端
-		client.close();
-	}
+//	@SuppressWarnings({ "resource", "unchecked" })
+//	@Before
+//	public void getConnection() throws UnknownHostException {
+//		// 创建客户端
+//		client = new PreBuiltTransportClient(Settings.EMPTY)
+//				.addTransportAddresses(new TransportAddress(InetAddress.getByName(HOST), PORT));
+//		logger.info("create connection");
+//	}
+//
+//	@Test
+//	public void addIndex1() throws IOException {
+//		IndexResponse response = client.prepareIndex("msg", "tweet", "1").setSource(XContentFactory.jsonBuilder()
+//				.startObject().field("userName", "张三").field("sendDate", new Date()).field("msg", "你好李四").endObject())
+//				.get();
+//
+//		logger.info("索引名称:" + response.getIndex() + "\n类型:" + response.getType() + "\n文档ID:" + response.getId()
+//				+ "\n当前实例状态:" + response.status());
+//	}
+//
+//	@Test
+//	public void addIndex2() {
+//		String jsonStr = "{" + "\"userName\":\"张三\"," + "\"sendDate\":\"2017-11-30\"," + "\"msg\":\"你好李四\"" + "}";
+//		IndexResponse response = client.prepareIndex("weixin", "tweet").setSource(jsonStr, XContentType.JSON).get();
+//		logger.info("json索引名称:" + response.getIndex() + "\njson类型:" + response.getType() + "\njson文档ID:"
+//				+ response.getId() + "\n当前实例json状态:" + response.status());
+//	}
+//	
+//	
+//	@Test
+//	public void getData1() {
+//		GetResponse getResponse = client.prepareGet("msg", "tweet", "1").get();
+//		logger.info("索引库的数据:" + getResponse.getSourceAsString());
+//	}
+//
+//	@After
+//	public void closeConnection() {
+//		// 关闭客户端
+//		client.close();
+//	}
 }
