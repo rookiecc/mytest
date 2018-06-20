@@ -32,7 +32,7 @@ public class ElasticsearchTest {
 		// 创建客户端
 		client = new PreBuiltTransportClient(Settings.EMPTY)
 				.addTransportAddresses(new TransportAddress(InetAddress.getByName(HOST), PORT));
-		logger.info("create connection");
+		logger.info("create connection"); 
 	}
 
 //	@Test
