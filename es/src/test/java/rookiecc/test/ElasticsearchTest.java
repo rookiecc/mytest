@@ -26,14 +26,14 @@ public class ElasticsearchTest {
 
 	private TransportClient client = null;
 
-	@SuppressWarnings({ "resource", "unchecked" })
-	@Before
-	public void getConnection() throws UnknownHostException {
-		// 创建客户端
-		client = new PreBuiltTransportClient(Settings.EMPTY)
-				.addTransportAddresses(new TransportAddress(InetAddress.getByName(HOST), PORT));
-		logger.info("create connection");   
-	}
+//	@SuppressWarnings({ "resource", "unchecked" })
+//	@Before
+//	public void getConnection() throws UnknownHostException {
+//		// 创建客户端
+//		client = new PreBuiltTransportClient(Settings.EMPTY)
+//				.addTransportAddresses(new TransportAddress(InetAddress.getByName(HOST), PORT));
+//		logger.info("create connection");   
+//	}
 
 //	@Test
 //	public void addIndex1() throws IOException {
@@ -54,15 +54,15 @@ public class ElasticsearchTest {
 //	}
 //	
 //	
-	@Test
-	public void getData1() {
-		GetResponse getResponse = client.prepareGet("msg", "tweet", "1").get();
-		logger.info("索引库的数据:" + getResponse.getSourceAsString());
-	}
-
-	@After
-	public void closeConnection() {
-		// 关闭客户端
-		client.close();
-	}
+//	@Test
+//	public void getData1() {
+//		GetResponse getResponse = client.prepareGet("msg", "tweet", "1").get();
+//		logger.info("索引库的数据:" + getResponse.getSourceAsString());
+//	}
+//
+//	@After
+//	public void closeConnection() {
+//		// 关闭客户端
+//		client.close();
+//	}
 }
